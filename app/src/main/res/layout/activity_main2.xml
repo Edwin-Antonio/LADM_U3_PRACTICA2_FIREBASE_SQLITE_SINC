@@ -8,24 +8,47 @@
     android:background="@drawable/fondo8"
     tools:context=".MainActivity2">
 
-    <FrameLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="95dp"
-            android:layout_margin="20dp"
-            android:text="Notas Internas"
-            android:textColor="@color/white"
-            android:textSize="25sp"
-            android:textStyle="bold"/>
+            android:orientation="vertical">
 
-    </FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="95dp"
+                    android:layout_margin="20dp"
+                    android:text="Notas Internas"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold"/>
 
-    <ListView
-        android:id="@+id/listaSQLite"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+            </FrameLayout>
+
+            <ListView
+                android:id="@+id/listaSQLite"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"/>
+
+            <Button
+                android:id="@+id/regresarAbrir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:text="REGRSAR"/>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

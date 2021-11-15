@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     var dbRemota = FirebaseFirestore.getInstance()
     var datalista = ArrayList<String>()
     var listaID = ArrayList<String>()
-    var noteHF = ""
+    var notaHF = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                     var cadena = "${document.getString("horafecha")}\n${document.getString("titulo")}\n${document.get(("contenido"))}"
                     datalista.add(cadena)
                     listaID.add(document.id.toString())
-                    noteHF = "${document.getString("horafecha")}"
+                    notaHF = "${document.getString("horafecha")}"
                 }
                 listaFB.adapter = ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, datalista)
                 listaFB.setOnItemClickListener { adapterView, view, posicion, l ->
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun eliminar(idElegido: String) {
         //SQLite
-        Notas(this).eliminarNotasHF(noteHF)
+        Notas(this).eliminarNotasHF(notaHF)
         //Nota(this).insertNota()
         //DB Firestore
         dbRemota.collection("notas")

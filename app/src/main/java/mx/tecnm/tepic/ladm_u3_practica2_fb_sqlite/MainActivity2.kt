@@ -18,6 +18,10 @@ class MainActivity2 : AppCompatActivity() {
 
         val sqliteNotas = Notas(this).getNotas() // Esta no va
         listaSQLite.adapter = ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, sqliteNotas)
+
+        regresarAbrir.setOnClickListener {
+            finish()
+        }
     }
 
 }

@@ -27,6 +27,9 @@ class MainActivity3 : AppCompatActivity() {
         btnAceptar.setOnClickListener {
             insertarDBSQLite()
         }
+        btn_regresarCrear.setOnClickListener {
+            finish()
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.N)

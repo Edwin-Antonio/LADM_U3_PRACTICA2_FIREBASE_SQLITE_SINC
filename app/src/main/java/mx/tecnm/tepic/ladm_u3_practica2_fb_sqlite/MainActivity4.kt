@@ -17,7 +17,9 @@ class MainActivity4 : AppCompatActivity() {
         setContentView(R.layout.activity_main4)
         //DB SQLite
         mostrarSQlite()
+        regresarEliminadas.setOnClickListener { finish() }
     }
+
     private fun mostrarSQlite() {
         val notasSQL = Notas(this).getNotas()
         notasEliminadas.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,notasSQL)
